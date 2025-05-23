@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { Product } from "@/types";
@@ -9,6 +10,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+
+const ALL_ITEMS_VALUE = "__ALL_ITEMS__"; // Special value for "All" option
 
 interface FilterDropdownProps<K extends keyof Product> {
   columnKey: K;
@@ -25,20 +28,32 @@ export function FilterDropdown<K extends keyof Product>({
   selectedValue,
   onFilterChange,
 }: FilterDropdownProps<K>) {
+  const handleValueChange = (value: string) => {
+    if (value === ALL_ITEMS_VALUE) {
+      onFilterChange(columnKey, ""); // Pass empty string for "All"
+    } else {
+      onFilterChange(columnKey, value);
+    }
+  };
+
+  // If selectedValue is empty (meaning "All"), set the Select's value to our special placeholder
+  // Otherwise, use the actual selectedValue
+  const currentSelectValue = selectedValue === "" ? ALL_ITEMS_VALUE : selectedValue;
+
   return (
     <div className="flex flex-col space-y-1.5">
       <Label htmlFor={`filter-${String(columnKey)}`} className="text-sm font-medium">
         {columnLabel}
       </Label>
       <Select
-        value={selectedValue}
-        onValueChange={(value) => onFilterChange(columnKey, value)}
+        value={currentSelectValue}
+        onValueChange={handleValueChange}
       >
         <SelectTrigger id={`filter-${String(columnKey)}`} className="w-full md:w-[180px] rounded-md shadow-sm">
           <SelectValue placeholder={`Filter by ${columnLabel.toLowerCase()}`} />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">All {columnLabel}s</SelectItem>
+          <SelectItem value={ALL_ITEMS_VALUE}>All {columnLabel}s</SelectItem>
           {options.map((option) => (
             <SelectItem key={option} value={option}>
               {option}
