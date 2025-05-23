@@ -38,10 +38,10 @@ export function EditableCell({ initialValue, onSave }: EditableCellProps) {
             if (e.key === 'Escape') handleCancel();
           }}
         />
-        <Button variant="ghost" size="icon" onClick={handleSave} className="h-8 w-8 text-green-500 hover:text-green-600">
+        <Button variant="ghost" size="icon" onClick={handleSave} className="h-8 w-8 text-primary hover:text-primary/80">
           <Check className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="icon" onClick={handleCancel} className="h-8 w-8 text-red-500 hover:text-red-600">
+        <Button variant="ghost" size="icon" onClick={handleCancel} className="h-8 w-8 text-muted-foreground hover:text-muted-foreground/80">
           <X className="h-4 w-4" />
         </Button>
       </div>

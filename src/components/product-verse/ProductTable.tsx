@@ -38,7 +38,7 @@ export function ProductTable({
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[80px]">Image</TableHead>
+            <TableHead className="w-[100px]">Image</TableHead> {/* Increased width for larger image */}
             <TableHead className="w-[300px]">Title</TableHead>
             <TableHead>Brand</TableHead>
             <TableHead>Category</TableHead>
@@ -55,8 +55,8 @@ export function ProductTable({
                   <Image 
                     src={product.thumbnail} 
                     alt={product.title} 
-                    width={50} 
-                    height={50} 
+                    width={60} // Increased size
+                    height={60} // Increased size
                     className="rounded object-cover"
                     data-ai-hint="product photo"
                   />

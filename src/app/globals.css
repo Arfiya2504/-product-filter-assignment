@@ -2,23 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
-    --background: 20 0% 96%; /* Light Gray #F5F5F5 (adjusted for better variable name) */
-    --foreground: 240 10% 3.9%;
+    --background: 240 60% 99%; /* Very Light Cool Off-White */
+    --foreground: 240 10% 3.9%; /* Dark Grey */
 
-    --card: 0 0% 100%;
+    --card: 0 0% 100%; /* White */
     --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 250 65% 75%; /* Soft Lavender - Adjusted for button visibility */
-    --primary-foreground: 250 60% 15%; /* Darker text for lavender buttons */
+    --primary: 335 79% 58%; /* Vibrant Pink */
+    --primary-foreground: 0 0% 100%; /* White */
 
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -26,15 +22,15 @@ body {
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 300 40% 88%; /* Dusty Rose - Adjusted for visibility */
-    --accent-foreground: 300 30% 20%; /* Darker text for accent elements */
+    --accent: 270 60% 90%; /* Soft Lavender */
+    --accent-foreground: 270 40% 20%; /* Darker text for lavender accent */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 250 65% 75%; /* Ring color to match primary */
+    --border: 240 15% 90%; /* Softer Border */
+    --input: 240 15% 92%; /* Softer Input Background */
+    --ring: 335 79% 58%; /* Match Primary Pink */
 
     --radius: 0.5rem;
 
@@ -55,17 +51,17 @@ body {
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 240 10% 10%; /* Dark Cool Grey */
+    --foreground: 0 0% 98%; /* Off-White */
 
-    --card: 240 10% 3.9%;
+    --card: 240 8% 12%; /* Slightly Off-Black for Card */
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 240 8% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 250 60% 65%; /* Dark mode Soft Lavender */
-    --primary-foreground: 250 60% 15%;
+    --primary: 335 75% 65%; /* Pink, adapted for dark mode */
+    --primary-foreground: 335 80% 10%; /* Very dark for contrast on dark mode pink */
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -73,15 +69,15 @@ body {
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 300 35% 70%; /* Dark mode Dusty Rose */
+    --accent: 270 50% 40%; /* Lavender, adapted for dark mode */
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 70% 50%; /* Adjusted destructive for dark mode */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 250 60% 65%; /* Ring color to match primary */
+    --border: 240 5% 25%; /* Darker Border */
+    --input: 240 5% 30%; /* Darker Input Background */
+    --ring: 335 75% 65%; /* Match Dark Primary Pink */
     
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
