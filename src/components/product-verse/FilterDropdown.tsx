@@ -40,6 +40,8 @@ export function FilterDropdown<K extends keyof Product>({
   // Otherwise, use the actual selectedValue
   const currentSelectValue = selectedValue === "" ? ALL_ITEMS_VALUE : selectedValue;
 
+  const allItemsText = columnLabel === "Category" ? `All Categories` : `All ${columnLabel}s`;
+
   return (
     <div className="flex flex-col space-y-1.5">
       <Label htmlFor={`filter-${String(columnKey)}`} className="text-sm font-medium">
@@ -53,7 +55,7 @@ export function FilterDropdown<K extends keyof Product>({
           <SelectValue placeholder={`Filter by ${columnLabel.toLowerCase()}`} />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value={ALL_ITEMS_VALUE}>All {columnLabel}s</SelectItem>
+          <SelectItem value={ALL_ITEMS_VALUE}>{allItemsText}</SelectItem>
           {options.map((option) => (
             <SelectItem key={option} value={option}>
               {option}
