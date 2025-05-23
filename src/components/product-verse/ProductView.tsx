@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { Product, ProductFilterKeys } from "@/types";
@@ -80,8 +81,20 @@ export function ProductView({ initialProducts, errorLoadingInitial }: ProductVie
   }, []);
 
   const uniqueOptions = useMemo(() => {
-    const brandOptions = Array.from(new Set(initialProducts.map(p => p.brand))).sort();
-    const categoryOptions = Array.from(new Set(initialProducts.map(p => p.category))).sort();
+    const brandOptions = Array.from(
+      new Set(
+        initialProducts
+          .map(p => p.brand)
+          .filter((b): b is string => typeof b === 'string' && b.trim() !== '')
+      )
+    ).sort();
+    const categoryOptions = Array.from(
+      new Set(
+        initialProducts
+          .map(p => p.category)
+          .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
+      )
+    ).sort();
     return { brand: brandOptions, category: categoryOptions };
   }, [initialProducts]);
 
