@@ -3,30 +3,19 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+// import Image from 'next/image'; // Removed Image import
 
 export default function LandingPage() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen text-center text-white overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="https://placehold.co/1920x1080.png" // Generic e-commerce style placeholder
-        alt="E-commerce product showcase"
-        layout="fill"
-        objectFit="cover"
-        quality={80} // Adjust quality for performance
-        className="-z-10" // Send to back
-        data-ai-hint="e-commerce products"
-        priority // Preload the background image for LCP
-      />
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60 -z-10" /> 
+    <div className="bg-background text-foreground relative flex flex-col items-center justify-center min-h-screen text-center">
+      {/* Background Image Removed */}
+      {/* Overlay Removed */}
       
-      <main className="z-0 p-8 flex flex-col items-center">
+      <main className="p-8 flex flex-col items-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fade-in-down">
           Welcome to <span className="text-primary">ProductVerse</span>
         </h1>
-        <p className="text-xl md:text-2xl mb-10 text-neutral-200 max-w-2xl animate-fade-in-up animation-delay-300">
+        <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl animate-fade-in-up animation-delay-300">
           Discover a curated collection of amazing products. Your next favorite item is just a click away!
         </p>
         <Link href="/products" passHref>
@@ -38,10 +27,10 @@ export default function LandingPage() {
           </Button>
         </Link>
       </main>
-      <footer className="absolute bottom-6 text-sm text-neutral-400 animate-fade-in animation-delay-900">
+      <footer className="absolute bottom-6 text-sm text-muted-foreground animate-fade-in animation-delay-900">
         Powered by Firebase Studio
       </footer>
-      {/* Animations (already client-side compatible) */}
+      {/* Animations (client-side compatible) */}
       <style jsx global>{`
         @keyframes fade-in-down {
           from { opacity: 0; transform: translateY(-20px); }
