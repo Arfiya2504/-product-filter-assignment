@@ -3,17 +3,14 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-// import Image from 'next/image'; // Removed Image import
 
 export default function LandingPage() {
   return (
     <div className="bg-background text-foreground relative flex flex-col items-center justify-center min-h-screen text-center">
-      {/* Background Image Removed */}
-      {/* Overlay Removed */}
       
       <main className="p-8 flex flex-col items-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fade-in-down">
-          Welcome to <span className="text-primary">ProductVerse</span>
+          Welcome to <span className="text-primary font-pacifico">ProductVerse</span>
         </h1>
         <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl animate-fade-in-up animation-delay-300">
           Discover a curated collection of amazing products. Your next favorite item is just a click away!
