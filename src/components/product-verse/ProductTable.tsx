@@ -58,7 +58,7 @@ export function ProductTable({
                   initialValue={product.title}
                   onSave={(newTitle) => onTitleUpdate(product.id, newTitle)}
                 />
-              </TableCell><TableCell>{product.brand}</TableCell><TableCell>{product.category}</TableCell><TableCell className="text-right">${product.price.toFixed(2)}</TableCell><TableCell className="text-right">{product.rating.toFixed(2)}</TableCell><TableCell className="text-center">
+              </TableCell><TableCell>{product.brand}</TableCell><TableCell>{product.category}</TableCell><TableCell className="text-right">₹{product.price.toFixed(2)}</TableCell><TableCell className="text-right">{product.rating.toFixed(2)}</TableCell><TableCell className="text-center">
                 <Button
                   variant="ghost"
                   size="icon"
