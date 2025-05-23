@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -7,18 +8,19 @@ import Image from 'next/image';
 export default function LandingPage() {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen text-center text-white overflow-hidden">
+      {/* Background Image */}
       <Image
-        src="https://placehold.co/1920x1080.png"
+        src="https://placehold.co/1920x1080.png" // Generic e-commerce style placeholder
         alt="E-commerce product showcase"
         layout="fill"
         objectFit="cover"
-        quality={80}
-        className="-z-10"
+        quality={80} // Adjust quality for performance
+        className="-z-10" // Send to back
         data-ai-hint="e-commerce products"
         priority // Preload the background image for LCP
       />
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60 -z-10" />
+      <div className="absolute inset-0 bg-black/60 -z-10" /> 
       
       <main className="z-0 p-8 flex flex-col items-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fade-in-down">
@@ -39,6 +41,7 @@ export default function LandingPage() {
       <footer className="absolute bottom-6 text-sm text-neutral-400 animate-fade-in animation-delay-900">
         Powered by Firebase Studio
       </footer>
+      {/* Animations (already client-side compatible) */}
       <style jsx global>{`
         @keyframes fade-in-down {
           from { opacity: 0; transform: translateY(-20px); }
